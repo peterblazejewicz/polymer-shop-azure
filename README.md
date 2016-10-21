@@ -31,6 +31,14 @@ You can use `polymer-cli` tool to scaffold your client side application: [https:
 
 You can use tool like `generator-aspnet` or `dotnet-cli new` commands to generate ASP.NET content over your client side code and use Git to review changes. This project was scaffolded with `Empty Web Application` project type and later updated to use static web site feature and custom hosting configuration for Kestrel server
 
+## Azure Web Application configuration
+
+### Private extension for `polymer-cli`
+
+[polymer-cli private extension](https://github.com/peterblazejewicz/polymer-cli-extension) private extension.
+
+This extension will be used to install `polymer-cli` build tool into Azure web site tool chain for CI build integration during deployment. This project will be deployed and build entirely on the Azure. When deployment finishes with success the content of the web site will be replaced with new, udpated version.
+
 ## Author
 
 @peterblazejewicz
