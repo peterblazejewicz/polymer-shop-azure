@@ -21,6 +21,16 @@ Install [polymer-cli](https://github.com/Polymer/polymer-cli):
     cd shop
     bower install
 
+### Generate Azure deployment script
+
+This was done using [Azure xplat cli](https://github.com/Azure/azure-xplat-cli)
+
+> NOTE: https://github.com/Azure/azure-xplat-cli/issues/3245
+
+```bash
+azure site deploymentscript --aspNetCore ./project.json
+```
+
 ### Start the development server
 
     polymer serve
