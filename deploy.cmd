@@ -78,6 +78,25 @@ SET MSBUILD_PATH=%ProgramFiles(x86)%\MSBuild\14.0\Bin\MSBuild.exe
 :: Deployment
 :: ----------
 
+:: Restore Bower packages using Yarn
+echo Restoring Bower packages with yarn
+
+pushd "%DEPLOYMENT_SOURCE%\site\repository"
+call yarn
+IF !ERRORLEVEL! NEQ 0 goto error
+popd
+
+:: Polymer client application build phase
+
+echo Building Polymer client app
+
+pushd "%DEPLOYMENT_SOURCE%\site\repository"
+call polymer build
+IF !ERRORLEVEL! NEQ 0 goto error
+popd
+
+:: Dotnet application build
+
 echo Handling ASP.NET Core Web Application deployment.
 
 :: 1. Restore nuget packages
