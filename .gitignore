@@ -236,3 +236,7 @@ FakesAssemblies/
 
 # NuGet
 project.lock.json
+
+# Remove yarn.lock for this project due to Bower related bugDebu
+# https://github.com/yarnpkg/yarn/issues/846
+yarn.lock
