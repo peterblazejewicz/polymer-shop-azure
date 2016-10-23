@@ -1,44 +1,44 @@
-# Polymer Shop demo application on Azure
+# SHOP
 
-A Polymer shop demo client app with Dotnet Kestrel server and Azure deployment script
+### Setup
 
-## Generate Polymer app with `polymer-cli`
+##### Prerequisites
 
-```
-  /\˜˜/   /\˜˜/\   
-  /__\/   /__\/__\    Polymer-CLI
- /\  /   /\  /\  /\ 
-/__\/   /__\/  \/__\  The multi-tool for Polymer projects
-\  /\  /\  /   /\  /
- \/__\/__\/   /__\/   Usage: `polymer <command> [options ...]`
-  \  /\  /   /\  /  
-   \/__\/   /__\/   
+Install [polymer-cli](https://github.com/Polymer/polymer-cli):
+(Need at least npm v0.3.0)
+
+    npm install -g polymer-cli
 
 
-Available Commands
+##### Setup
+    # Using CLI
+    mkdir shop
+    cd shop
+    polymer init shop
+    
+    # Or cloning direct from GitHub
+    git clone https://github.com/Polymer/shop.git
+    cd shop
+    bower install
 
-  build   Builds an application-style project                     
-  help    Shows this help message, or help for a specific command 
-  init    Initializes a Polymer project                           
-  lint    Lints the project                                       
-  serve   Runs the polyserve development server                   
-  test    Runs web-component-tester
-  ```
+### Start the development server
 
-You can use `polymer-cli` tool to scaffold your client side application: [https://github.com/polymer/polymer-cli](https://github.com/polymer/polymer-cli)
+    polymer serve
 
-## Scaffold Dotnet web application over Polymer content
+### Run web-component-tester tests
 
-You can use tool like `generator-aspnet` or `dotnet-cli new` commands to generate ASP.NET content over your client side code and use Git to review changes. This project was scaffolded with `Empty Web Application` project type and later updated to use static web site feature and custom hosting configuration for Kestrel server
+    polymer test
 
-## Azure Web Application configuration
+### Build
 
-### Private extension for `polymer-cli`
+    polymer build
 
-[polymer-cli private extension](https://github.com/peterblazejewicz/polymer-cli-extension) private extension.
+### Test the build
 
-This extension will be used to install `polymer-cli` build tool into Azure web site tool chain for CI build integration during deployment. This project will be deployed and build entirely on the Azure. When deployment finishes with success the content of the web site will be replaced with new, udpated version.
+This command serves the minified version of the app in an unbundled state, as it would be served by a push-compatible server:
 
-## Author
+    polymer serve build/unbundled
+    
+This command serves the minified version of the app generated using fragment bundling:
 
-@peterblazejewicz
+    polymer serve build/bundled
