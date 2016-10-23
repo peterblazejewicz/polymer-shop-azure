@@ -37,7 +37,19 @@
 
   "buildOptions": {
     "emitEntryPoint": true,
-    "preserveCompilationContext": true
+    "preserveCompilationContext": true,
+    "compile": {
+      "exclude": [
+        ".vscode",
+        "**/bower_components",
+        "**/node_modules",
+        "bin/",
+        "dist/",
+        "e2e/",
+        "obj/",
+        "src/"
+      ]
+    }
   },
 
   "runtimeOptions": {
@@ -47,11 +59,27 @@
   },
 
   "publishOptions": {
+    "exclude": [
+      ".deployment",
+      ".editorconfig",
+      ".git",
+      ".gitignore",
+      ".vscode/",
+      "*.conf.js",
+      "**/*.cs",
+      "bin/",
+      "bower_components/",
+      "bower.json",
+      "deploy.cmd",
+      "LICENSE",
+      "node_modules/",
+      "obj/",
+      "polymer.json",
+      "src/",
+      "yarn.lock"
+    ],
     "include": [
-      "wwwroot",
-      "**/*.cshtml",
-      "appsettings.json",
-      "web.config"
+      "**/*"
     ]
   },
 
