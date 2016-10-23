@@ -15,6 +15,20 @@ IF %ERRORLEVEL% NEQ 0 (
   goto error
 )
 
+:: Verify polymer-cli extension has been installed
+which polymer 2>nul >nul
+IF %ERRORLEVEL% NEQ 0 (
+  echo Missing polymer-cli executable, please install it with private polymer-cli extension.
+  goto error
+)
+
+:: Verify yarn extension has been installed
+which yarn 2>nul >nul
+IF %ERRORLEVEL% NEQ 0 (
+  echo Missing Yarn, please install it with private Yarn extension.
+  goto error
+)
+
 :: Setup
 :: -----
 
