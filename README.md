@@ -52,3 +52,36 @@ This command serves the minified version of the app in an unbundled state, as it
 This command serves the minified version of the app generated using fragment bundling:
 
     polymer serve build/bundled
+
+## Deployment to Azure
+
+### Create Azure web site
+
+[Create a web app in an App Service Environment](https://azure.microsoft.com/en-us/documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase/)
+
+### Configure Web App
+
+#### Configure NodeJS version
+
+```ini
+WEBSITE_NODE_DEFAULT_VERSION = 6.7.0
+```
+#### Configure private extensions
+
+```ini
+WEBSITE_PRIVATE_EXTENSIONS = 1
+```
+
+#### Install Yarn and Polymer CLI tools
+
+[azure-site-extensions](https://github.com/peterblazejewicz/azure-site-extensions)
+
+### Deploy your web application
+
+Now you can deploy your application using Azure deployment integration with Git local or Github repository:
+
+[Automating code deployment with GitHub and Azure](https://github.com/blog/2056-automating-code-deployment-with-github-and-azure)
+
+## Author
+
+@peterblazejewicz
