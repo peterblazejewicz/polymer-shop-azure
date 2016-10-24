@@ -43,7 +43,7 @@ namespace Polymer.Shop.Client
                     var headers = context.Context.Response.GetTypedHeaders();
                     headers.CacheControl = new CacheControlHeaderValue()
                     {
-                        MaxAge = TimeSpan.FromDays(1)
+                        MaxAge = TimeSpan.FromDays(7)
                     };
                 }
             });
